@@ -1,213 +1,72 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Partner First Page</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUvtk9_ZJhfZE6H8fzMTGGwLyoJeWSCIOINU9iCy5oE55gkQ3Po3fMs1ROePGEiU27dZg&usqp=CAU");
-            /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrGcysi1Ed8InwSLaWufOHTmZS1n4vpFPcFHIsOQREe7riN8K2malmOMT1GWEobKJzU5g&usqp=CAU"); */
-            font-family: 'Roboto', sans-serif;
-            background-color: #f5f5f5;
+    <title>Restaurant Sign Up</title>
+</head>
+<style>
+    body{
+            background-image: url("{% static 'images/signup.jpg' %}");
             background-size: cover;
+            color: white;
             display: flex;
             align-items: center;
-            justify-content: flex-end;
+            justify-content: center;
             height: 100vh;
             margin: 0;
-            padding: 58px;
-            border-radius: 100px;
+        
+
+            form {
+                color: white;
+                background: rgba(0, 0, 0, 0.5);
+                padding: 58px;
+                border-radius: 40px;
+                width: 400px;
+}
+
+h2 {
+    font-size: 64px;
+}
+
         }
-
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-color: #f8f3f38e;
-            backdrop-filter: blur(2px);
-            border-radius: 50px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            width: 30rem;
-            padding: 2rem;
-            margin-top: 5rem;
-        }
-
-        .logo { 
-            position: absolute; 
-            top: 0px;
-            left: -550px; 
-            object-fit: cover;
-            float: right;
-        } 
-
-        .logo p {
-            color: #f2bf19;
-            /* font-size: x-large; */
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 1.5rem;
-        }
-
-
-        h1 {
-            font-size: 2rem;
-            font-weight: 500;
-            color: #0a0a0a;
-            margin-bottom: 1rem;
-        }
-
-        h2 {
-            font-size: 1rem;
-            font-weight: 500;
-            color: #706f6f;
-            margin-bottom: 1rem;
-        }
-
-        h4 {
-            font-size: 0.8rem;
-            font-weight: 500;
-            color: #ffffff;
-            margin-bottom: 1rem;
-        }
-
-        form {
-            width: 100%;
-            margin-top: 1rem;
-        }
-
         label {
-            display: block;
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: #333;
-            margin-bottom: 0.2rem;
-        }
-
-        input[type="text"],
-        input[type="tel"],
-        input[type="password"] {
-            width: 100%;
-            padding: 0.5rem;
-            border: 1px solid #fbf9f9;
-            border-radius: 4px;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        input[type="submit"] {
-            cursor: pointer;
-            background-color: #313531;
             color: white;
-            padding: 0.5rem 1rem;
-            border: none;
-            border-radius: 4px;
-            font-size: 0.9rem;
-            margin-top: 1rem;
-        }
+    }
 
-        input[type="submit"]:hover {
-            background-color: #45a049;
-        }
-
-        #otp-container {
-  display: flex;
-  justify-content: space-between;
-  width: 300px;
-  margin: 0 auto;
-}
-
-#otp-container input {
-  width: 50px;
-  text-align: center;
-  font-size: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 10px;
-  box-sizing: border-box;
-}
-
-#continue-button {
-  display: block;
-  margin: 20px auto;
-  padding: 10px 20px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-    </style>
-
-    <script>
-    const continueButton = document.getElementById('continue-button');
-    const otpInputs = document.querySelectorAll('#otp-container input');
-    
-    continueButton.addEventListener('click', () => {
-      otpInputs.forEach((input, index) => {
-        if (input.value.length === 0) {
-          input.focus();
-          return false;
-        }
-      });
-    
-      // Here you can add the logic to submit the OTP
-    });
-    
-    otpInputs.forEach((input, index) => {
-      input.addEventListener('input', () => {
-        if (input.value.length === 1) {
-          input.nextElementSibling.focus();
-        }
-    
-        if (input.value.length === 0) {
-          input.previousElementSibling.focus();
-        }
-    
-        if (index === otpInputs.length - 1 && input.value.length === 1) {
-          continueButton.focus();
-        }
-      });
-    });
-</script>
-</head>
+        </style>
 <body>
-    <div class="container">
-        <div class="logo"> 
-            <img src="C:\Users\Hp\.vscode\Projects\GitHub\Foodilicious\static\images\FoodAlicious_logo.jpg"alt="Your Logo"width="150" height="150";>
-            <p>Food that is more accessible.</p>
-            <p>Increase your online order </p>
-        </div>
-        <h1>Welcome to FoodAlicious Partner!</h1>
-        <h2>Enter a mobile number or restaurant ID to continue</h2>
-        <form action="/submit-first-page" method="post">
-            <label for="restaurant_id">Restaurant ID / Mobile Number:</label>
-            <input type="text / tel" id="restaurant_id / phone" name="restaurant_id / phone" pattern="[0-9]{10}" placeholder="Enter Restaurant ID / phone number" required><br><br>
-            <input type="submit" value="Continue">
-        </form>
-        <!-- <h3 id="otpFormTitle" style="display: none;">Enter the 6-digit OTP sent to your phone number:</h3>
-        <form id="otpForm" action="/submit-second-page" method="post" style="display: none;">
-            <label for="otp">6-digit OTP:</label>
-            <input type="tel" id="otp" name="otp" pattern="[0-9]{6}" placeholder="Enter 6-digit OTP" required><br><br>
-            <input type="submit" value="Continue">
-        </form> -->
-
-        <div id="otp-container">
-            <input type="text" id="otp-input-1" maxlength="1">
-            <input type="text" id="otp-input-2" maxlength="1">
-            <input type="text" id="otp-input-3" maxlength="1">
-            <input type="text" id="otp-input-4" maxlength="1">
-            <input type="text" id="otp-input-5" maxlength="1">
-            <input type="text" id="otp-input-6" maxlength="1">
-          </div>
-          <button id="continue-button">Continue</button><a href="C:\Users\Hp\.vscode\Projects\GitHub\Foodilicious\templates\Restaurant_partner\restaurant_onboarding.html">Onboarding</a>
-        <h4>By logging in, I agree to FoodAlicious terms and conditions</h4>
+<body>
+    <div class="logo"> 
+        <img src="{% static 'images/partner_logo.jpg' %}" alt="Your Logo" width="150" height="150">
     </div>
+    <h2>Register here to become our Restaurant Partner</h2>
+    <form action="Signup.php" method="post">
+        <label for="fname">Restaurant Name:</label><br>
+        <input type="text" id="fname" name="fname" placeholder="Enter Restaurant Name" required><br><br>
+
+        <label for="email">Restaurant Email:</label><br>
+        <input type="email" id="email" name="email" placeholder="Enter Restaurant Email" required><br><br>
+
+        <label for="pwd">Password:</label><br>
+        <input type="password" id="pwd" name="pwd" placeholder="Enter your password" required><br><br>
+
+        <label for="address">Address:</label><br>
+        <input type="text" id="address" name="address" placeholder="Enter your Address" required><br><br>
+
+        <label for="phone">Phone Number:</label><br>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="Enter restaurant phone number" required><br><br>
+        <style>
+            .custom-button {
+                padding: 32px 64px;
+                font-size: 52px;
+                border: none;
+                cursor: pointer;
+            }
+        </style>
+
+        <button onclick="SubmitEvent()" style="background-color: #292727; color: white;">Submit</button>
+
+        <p>Already have an account? <a href="{% url 'restaurant_login'%}">Restaurant Login</a></p>
+    </form>
 </body>
 </html>

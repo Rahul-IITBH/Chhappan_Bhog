@@ -2,10 +2,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Restaurant Login</title>
+    <title>Login</title>
     <style>
         body {
-            background-image: url("{% static 'images/restaurant_login.jpg' %}"); /* Use Django static tag */
+            background-image: url("{% static 'images/login.jpg' %}"); /* Use Django static tag */
             background-size: cover;
             color: white;
             display: flex;
@@ -33,23 +33,19 @@
     </style>
 </head>
 <body>
-    <div class="logo"> 
-        <img src="{% static 'images/partner_logo.jpg' %}" alt="Your Logo" width="150" height="150">
-    </div>
-
-    <h2>Restaurant Login</h2>
-    <form action="{% url 'restaurant_login' %}" method="post">
+    <h2>Login</h2>
+    <form action="{% url 'login' %}" method="post">
         {% csrf_token %}
         
-        <label for="username">Email ID:</label><br>
-        <input type="email" id="username" name="username" placeholder="Enter Restaurant Email" required><br><br>
+        <label for="username">Institute Email Id:</label><br>
+        <input type="email" id="username" name="username" placeholder="Enter your Institute Email" required><br><br>
 
         <label for="pwd">Password:</label><br>
         <input type="password" id="pwd" name="pwd" placeholder="Enter your Password" required><br><br>
 
         <button type="submit" style="background-color: #292727; color: white;">Submit</button>
 
-        <p>Don't have an account? <a href="{% url 'restaurant_registration'%}">Restaurant Sign Up</a></p>
+        <p>Don't have an account? <a href="{% url 'signup'%}">Sign Up</a></p>
     </form>
     {% if messages %}
         <ul class="messages">

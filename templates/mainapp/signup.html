@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Delivery Sign Up</title>
+    <title>Sign Up</title>
 </head>
 <style>
     body{
@@ -36,16 +36,16 @@ h2 {
         </style>
 <body>
 <body>
-    <div class="logo"> 
-        <img src="{% static 'images/partner_logo.jpg' %}" alt="Your Logo" width="150" height="150">
-    </div>
-    <h2>Register here to become our Delivery Partner</h2>
+    <h2>Create an Account</h2>
     <form action="Signup.php" method="post">
         <label for="fname">Name:</label><br>
         <input type="text" id="fname" name="fname" placeholder="Enter your Name" required><br><br>
 
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" placeholder="Enter your Email" required><br><br>
+        <label for="email">Institute Email:</label><br>
+        <input type="email" id="email" name="email" placeholder="Enter your Institute Email" required><br><br>
+
+        <label for="phone">Institute Id:</label><br>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{8}" placeholder="Enter your Institute Id" required><br><br>
 
         <label for="pwd">Password:</label><br>
         <input type="password" id="pwd" name="pwd" placeholder="Enter your password" required><br><br>
@@ -66,7 +66,7 @@ h2 {
 
         <button onclick="SubmitEvent()" style="background-color: #292727; color: white;">Submit</button>
 
-        <p>Already have an account? <a href="{% url 'delivery_login'%}">Delivery Partner Login</a></p>
+        <p>Already have an account? <a href="{% url 'login'%}">Login</a></p>
     </form>
 </body>
 </html>
