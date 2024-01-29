@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Alicious</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            height: 50vh;
+            background-image: url("{% static 'images/home.jpg' %}");
+            background-size: cover;
+            background-position: center;
+        }
+
+        header {
+            background-color: rgba(255, 255, 255, 0.7);
+            height: 50vh;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            height: 80vh;
+        }
+
+        section h1 {
+            font-size: 5rem;
+            color: #ff5f13;
+            margin-bottom: 1rem;
+        }
+
+        section p {
+            font-size: 1.5rem;
+            color: #bdb3ae;
+            margin-bottom: 1rem;
+        }
+
+        .form-section {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            height: 40vh;
+        }
+
+        .form-section a {
+            margin: 0 1rem;
+        }
+
+        /* Add other styles as needed */
+    </style>
+</head>
+<body>
+    <main>
+        <section>
+            <h1><strong>Food Alicious</strong></h1>
+            <p><strong>Explore our collection of top-rated restaurants</strong></p>
+        </section>
+        <section class="form-section">
+            <div class="signup-container">
+                <a href="{% url 'signup' %}">Customer Sign Up</a>
+            </div>
+            <div class="login-container">
+                <a href="{% url 'login' %}">Customer Log In</a>
+            </div>
+            <div class="restaurant_registration-container">
+                <a href="{% url 'restaurant_registration' %}">Restaurant Sign Up</a>
+            </div>
+            <div class="restaurant_login-container">
+                <a href="{% url 'restaurant_login' %}">Restaurant Login</a>
+            </div>
+            <div class="delivery_signup-container">
+                <a href="{% url 'delivery_signup' %}">Delivery Partner Sign Up</a>
+            </div>
+            <div class="delivery_login-container">
+                <a href="{% url 'delivery_login' %}">Delivery Partner Log In</a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

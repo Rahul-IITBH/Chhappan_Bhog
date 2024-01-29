@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Food Delivery - Restaurant Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-image: url('{% static "dashboard.jpg" %}');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .dashboard-container {
+      width: 80%;
+      background: rgba(255, 255, 255, 0.9); /* Add some opacity to improve readability */
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    .user-profile {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .user-profile img {
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+    }
+
+    .user-details {
+      margin-top: 20px;
+      text-align: left;
+    }
+
+    .user-details p {
+      margin: 10px 0;
+    }
+
+    a.logout-btn {
+      display: inline-block; /* Change to inline-block */
+      text-align: center;
+      color: #fff;
+      background-color: #4caf50;
+      padding: 8px 12px; /* Adjust padding for a smaller size */
+      text-decoration: none;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="restaurant_dashboard-container">
+    <h2>Welcome to Campus Food Delivery Restaurant Dashboard</h2>
+
+    <div class="user-profile">
+      <img src='{% static "avtar.jpg" %}' alt="User Avatar">
+      <h3>{{ user.get_full_name }}</h3>
+    </div>
+
+    <div class="user-details">
+      <p><strong>Email:</strong> {{ user.email }}</p>
+      <p><strong>Phone:</strong> {{ user.phone_number }}</p>
+      <p><strong>Address:</strong> {{ user.address }}</p>
+    </div>
+
+    <!-- Add more content and features specific to the user's dashboard -->
+
+    <a href="{% url 'logout' %}" class="logout-btn">Logout</a>
+  </div>
+</body>
+</html>

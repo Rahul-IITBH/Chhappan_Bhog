@@ -1,0 +1,120 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.logo h1 {
+    order: 1;
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+    color: #6c757d;
+    font-family: 'Raleway', sans-serif;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar li {
+    padding: 20px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #6c757d;
+    font-size: 18px;
+}
+
+.navbar a:hover {
+    color: #007bff;
+}
+
+header h1 {
+    margin: 0;
+    padding: 20px;
+    font-size: 32px;
+    color: white;
+}
+
+main {
+    padding: 2rem 0;
+}
+
+section {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2rem;
+    color: #333333;
+    margin-bottom: 1rem;
+}
+
+section p {
+    color: #777777;
+    margin-bottom: 1.5rem;
+}
+
+section a {
+    background-color: #ff5f13;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+section a:hover {
+    background-color: #ff8f13;
+}
+
+.form-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.button-container a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.button-container a:hover {
+    background-color: #0056b3;
+}
+
+.signup-container,
+.login-container {
+    width: 48%;
+}
+
+footer {
+    background-color: #2d2d2d;
+    padding: 1.5rem 0;
+    text-align: center;
+    color: #ffffff;
+}
